@@ -17,7 +17,7 @@ Authorization: Bearer <your_jwt_token>
 ---
 
 ## 1. User Authentication
-### Register UserCreates a new user account. By default, the status is set to `PENDING_APPROVAL`.
+### Register User Creates a new user account. By default, the status is set to `PENDING_APPROVAL`.
 
 * **Endpoint:** `/MajorRegister`
 * **Method:** `POST`
@@ -52,7 +52,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-### Login UserAuthenticates a user. A JWT is only returned if the user status is `ACTIVE`.
+### Login User Authenticates a user. A JWT is only returned if the user status is `ACTIVE`.
 
 * **Endpoint:** `/MajorLogin`
 * **Method:** `POST`
@@ -100,7 +100,7 @@ Authorization: Bearer <your_jwt_token>
 ---
 
 ## 2. Core Data
-### List Available AccountsFetches the complete list of FreeFire accounts available in the system.
+### List Available Accounts Fetches the complete list of FreeFire accounts available in the system.
 
 * **Endpoint:** `/MajorList`
 * **Method:** `GET`
@@ -133,7 +133,7 @@ Authorization: Bearer <your_jwt_token>
 ---
 
 ## 3. Request Management
-### Create RequestSubmit a request for a specific account. Fails if the account is taken or if the user already has an active request.
+### Create Request Submit a request for a specific account. Fails if the account is taken or if the user already has an active request.
 
 * **Endpoint:** `/MajorRequestCreate`
 * **Method:** `POST`
@@ -167,7 +167,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-### List User RequestsFetches all requests made by the logged-in user. If a request is `APPROVED`, credential details (`uid`, `password`) are included.
+### List User Requests Fetches all requests made by the logged-in user. If a request is `APPROVED`, credential details (`uid`, `password`) are included.
 
 * **Endpoint:** `/MajorRequestsList`
 * **Method:** `GET`
@@ -198,7 +198,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-### Cancel RequestCancels a pending request.
+### Cancel Request Cancels a pending request.
 
 * **Endpoint:** `/MajorRequestCancel`
 * **Method:** `POST`
@@ -233,7 +233,7 @@ Authorization: Bearer <your_jwt_token>
 ---
 
 ## 4. Gift System
-### List GiftsFetches accounts gifted specifically to the user. If the user has claimed the gift, credentials are revealed.
+### List Gifts Fetches accounts gifted specifically to the user. If the user has claimed the gift, credentials are revealed.
 
 * **Endpoint:** `/MajorGiftsList`
 * **Method:** `GET`
@@ -262,7 +262,7 @@ Authorization: Bearer <your_jwt_token>
 
 ---
 
-### Claim GiftMarks a gift as claimed, allowing the user to view the credentials via the List endpoint.
+### Claim Gift Marks a gift as claimed, allowing the user to view the credentials via the List endpoint.
 
 * **Endpoint:** `/MajorGiftClaim`
 * **Method:** `POST`
