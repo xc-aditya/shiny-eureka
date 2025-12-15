@@ -291,3 +291,23 @@ Authorization: Bearer <your_jwt_token>
 { "error": "ACCESS_DENIED" }
 
 ```
+
+#📋 System Status Enumerations These statuses define the state of users, accounts, and transactions within the AdityaCore API and Admin Panel.
+
+| Status Value | Description | Context |
+| --- | --- | --- |
+| `PENDING_APPROVAL` | The user has registered but requires admin approval before they can log in and use the core features. | Set upon initial registration. |
+| `ACTIVE` | The user is approved and currently active. | Required for successful login and JWT generation. |
+| `SUSPENDED` | The user's account has been temporarily disabled by an administrator. | Blocks login access. |
+
+| Status Value | Description | Context |
+| --- | --- | --- |
+| `CREATED` | The user has successfully submitted the request. | Initial status. |
+| `APPROVED` | An administrator has approved the request, and the account credentials are now accessible to the user. | Final successful state. |
+| `REJECTED` | An administrator has rejected the request. The user can create a new request later. | Final unsuccessful state (Admin decision). |
+| `CANCELLED` | The user explicitly revoked or cancelled their own request before admin approval. | Final unsuccessful state (User action). |
+
+| Status Value | Description | Context |  |
+| --- | --- | --- | --- |
+| `UNCLAIMED` | The account has been gifted to the user, but the user has not yet retrieved the credentials. | Initial state set by the Admin Panel. |  |
+| `CLAIMED` | The user has executed the `/MajorGiftClaim` endpoint to retrieve and mark the credentials. | Final state after user action. |  |
